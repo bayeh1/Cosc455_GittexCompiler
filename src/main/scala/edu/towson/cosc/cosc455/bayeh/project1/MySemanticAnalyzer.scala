@@ -180,7 +180,7 @@ class MySemanticAnalyzer {
       }
       else varStack.push(stack.pop())
     }
-    if(varDef.equals("")) SemanticError("Variable "+ varName +" not defined for this scope.")
+    if(varDef.equals("")) SemanticError("Variable is not defined")
 
     while(!varStack.isEmpty){
       stack.push(varStack.pop())
@@ -250,7 +250,7 @@ class MySemanticAnalyzer {
     }
   }
   def SemanticError(error : String): Unit ={
-    println("Semantic error discovered. \n" + error + "\nExiting.")
+    println("Semantic error! Exiting.")
     System.exit(1)
   }
 }
